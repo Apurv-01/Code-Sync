@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+<div class="main">
+  <div class="top-text">
+    <h1 class="main-heading">CodeSync</h1>
+    <p class="para">CodeSync is a tool which can be used to share snippets of code online with other people who can access this code from another side of world using a key</p>
+  </div>
+
+  <div class="buttons">
+    <a href="/send">
+      <button class="send-button">Send</button>
+    </a>
+    <div class="recieve">
+      <form target="/" method="post" class="recieve-form">
+        <input class="code-input" type="text" placeholder="Enter Code" name="uid">
+        <button class="recieve-btn" type="submit">GO</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

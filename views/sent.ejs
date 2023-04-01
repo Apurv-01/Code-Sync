@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+<div class="sent">
+<h1 class="result-heading">Share this Code </h1>
+<div class="hex-code">
+    <h2 class="uid"><%=uid%></h2>
+    <button class="hex-btn" onclick="myFunction()">Copy</button>
+</div>
+</div>
+
+<script>
+function myFunction() {
+    console.log("hello")
+    const copyText = document.querySelector(".uid");
+    const btn = document.querySelector('button');
+    navigator.clipboard.writeText(copyText.textContent).then(
+        ()=>{
+    btn.innerText = "Copied";    
+    setTimeout(()=>{btn.innerText = "Copy"},2000)})
+    
+    
+    
+
+} 
+</script>
+</body>
+</html>
+ 
