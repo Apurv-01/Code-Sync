@@ -11,7 +11,6 @@ app.use(express.static("public"));
 
 //
 //connecting and creating a database
-console.log(process.env);
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hl6wk8j.mongodb.net/Snippet`).then(()=>console.log("Database Connected"));
 const snippetSchema = mongoose.Schema({
   id: String,
