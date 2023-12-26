@@ -11,7 +11,6 @@ app.use(express.static("public"));
 
 //
 //connecting and creating a database
-console.log(process.env);
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hl6wk8j.mongodb.net/Snippet`).then(()=>console.log("Database Connected"));
 const snippetSchema = mongoose.Schema({
   id: String,
@@ -53,7 +52,6 @@ app.post("/", (req, res) => {
 });
 app.get("/:uid", (req, res) => {
   let uid = req.params["uid"];
-  console.log(uid);
   Snippet.find({ id: uid }).then((x) => {
     if (x[0] !== undefined) {
       res.render("result", { text: x[0].text });
@@ -61,7 +59,7 @@ app.get("/:uid", (req, res) => {
     else{res.render("error")}
   });
 });
-app.listen(process.env.PORT||3000, () => {
+app.listen(4000, () => {
   console.log("Listening to port");
 });
 //
